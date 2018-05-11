@@ -1,0 +1,58 @@
+<?php
+    $activeItem = BackendMenu::getActiveMainMenuItem();
+    $mySettings = System\Classes\SettingsManager::instance()->listItems('mysettings');
+$navbarMode = Backend\Models\BrandSetting::get('menu_mode', 'inline');
+?>
+<nav class="bmenu"  role="navigation">
+    <div class="bmenu__toolbar">
+        <div>
+            <a class="bmenu__toggle" href="javascript:;">
+                <span class="bmenu__toggle__icon">
+                    <i class="icon-bars"></i>
+                </span>
+                <span class="bmenu__toggle__title">
+                    <?= $activeItem ? e(trans($activeItem->label)) : '' ?>
+                </span>
+            </a>
+
+            <ul class="bmenu__nav bmenu__nav-main">
+                <?php foreach (BackendMenu::listMainMenuItems() as $item): ?>
+                <?php
+                        $isActive = BackendMenu::isMainMenuItemActive($item);
+                    ?>
+                <li class="bmenu__nav__item">
+                    <a href="<?= $item->url ?>" class="bmenu__nav__link">
+                            <span class="bmenu__nav__icon">
+                                <?php if ($item->iconSvg): ?>
+                                    <img class="bmenu__svg__icon" src="<?= Url::asset($item->iconSvg) ?>">
+                                <?php endif ?>
+
+                                <i class="<?= $item->iconSvg ? 'svg-replace' : null ?> <?= $item->icon ?>"></i>
+                            </span>
+                        <span class="bmenu__nav__label">
+                                <?= e(trans($item->label)) ?>
+                            </span>
+                    </a>
+                </li>
+                <?php endforeach ?>
+            </ul>
+        </div>
+    </div>
+    <div class="bmenu__toolbar-right" >
+        <ul class="bmenu__nav">
+
+            <li class="bmenu__nav__item">
+                <a href="<?= Backend::url('backend/auth/signout') ?>" class="bmenu__nav__link">
+                            <span class="bmenu__nav__icon">
+                                <i class="<?= $item->iconSvg ? 'svg-replace' : null ?> <?= $item->icon ?>"></i>
+                            </span>
+                    <span class="bmenu__nav__label">
+                                  <?= e(trans('backend::lang.account.sign_out')) ?>
+                            </span>
+                </a>
+            </li>
+        </ul>
+
+
+    </div>
+</nav>

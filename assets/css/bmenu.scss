@@ -1,0 +1,132 @@
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+*, *:before, *:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+@import 'icons';
+.bmenu {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-color: #000000;
+  padding: 0 20px;
+  line-height: 0;
+  white-space: nowrap;
+  vertical-align: top;
+  display: flex;
+  justify-content: space-between;
+
+  &__toolbar {
+    max-width: 100%;
+    width: 100%;
+    overflow-x: auto;
+    &__avatar {
+      max-height: 51px;
+    }
+    &-right {
+
+    }
+  }
+
+  .bmenu__toggle {
+    display: none;
+    &__icon {
+
+      i {
+        font-size: 30px;
+        color: #fff;
+        line-height: 50px;
+      }
+    }
+  }
+
+  &__nav {
+
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    float: left;
+    white-space: nowrap;
+    overflow: hidden;
+    display: flex;
+    &__item {
+      color: rgba(255, 255, 255, 0.6);
+      display: inline-block;
+      vertical-align: top;
+      position: relative;
+      margin-right: 10px;
+
+    }
+
+    &__link {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+      text-decoration: none;
+      display: block;
+      font-size: 14px;
+      color: inherit;
+      outline: none;
+      padding: 10px 15px;
+
+      img {
+        height: 21px;
+        width: 21px;
+        margin-right: 5px;
+        position: relative;
+        top: 0;
+      }
+    }
+
+    &__icon {
+      position: relative;
+      top: 5px;
+      margin-right: 5px;
+      height: 21px;
+      width: 21px;
+      .svg-replace {
+        display: none;
+      }
+      i {
+        line-height: 1;
+        font-size: 26px;
+        vertical-align: middle;
+        margin: -12px 7px 0 0;
+        display: inline-block;
+      }
+    }
+    &__label {
+      line-height: 30px;
+    }
+
+
+  }
+
+  @media (max-width: 768px) {
+    .bmenu__toggle{
+      display: block;
+    }
+    &__nav-main {
+
+      position: absolute;
+      display: none;
+      background: #000;
+      width: 300px;
+      flex-wrap: wrap;
+      top: 50px;
+      left: 0;
+      &.active{
+        display: block;
+        height: 100vh;
+        li{
+          display: block;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,6 @@
+plugin:
+    name: 'uit.bmenu::lang.plugin.name'
+    description: 'uit.bmenu::lang.plugin.description'
+    author: Uit
+    icon: oc-icon-dashboard
+    homepage: ''

@@ -29,11 +29,13 @@ class Plugin extends PluginBase
         Event::listen('cms.page.postprocess', function ($controller, $url, $page, $dataHolder) {
 
             $this->loadBackendUser();
-            $this->registerBackendNavigations();
-            $html = '';
-            $html .= $this->makeLayoutPartial(base_path('plugins/uit/bmenu/partials/menu'));
-            $html .= $this->makeAssets().'</body>';
-            $dataHolder->content = str_replace('</body>',$html, $dataHolder->content);
+            if(!is_null($this->user)) {
+                $this->registerBackendNavigations();
+                $html = '';
+                $html .= $this->makeLayoutPartial(base_path('plugins/uit/bmenu/partials/menu'));
+                $html .= $this->makeAssets().'</body>';
+                $dataHolder->content = str_replace('</body>',$html, $dataHolder->content);
+            }
 
         });
 

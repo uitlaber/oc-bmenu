@@ -1,0 +1,8 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    show_menu:
+        label: Show menu in frontend
+        type: switch

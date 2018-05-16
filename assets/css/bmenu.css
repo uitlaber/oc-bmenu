@@ -2193,7 +2193,9 @@ button.close {
         font-size: 30px;
         vertical-align: middle; }
     .bmenu__nav__label {
-      line-height: 30px; }
+      line-height: 30px;
+      font-weight: 400;
+      font-style: normal; }
     .bmenu__nav__item {
       color: rgba(255, 255, 255, 0.6);
       display: inline-block;

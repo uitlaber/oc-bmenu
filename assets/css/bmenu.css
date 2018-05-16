@@ -2160,15 +2160,14 @@ button.close {
     display: flex; }
     .bmenu__nav__link {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-      text-decoration: none;
-      display: block;
+      text-decoration: none !important;
+      display: flex;
       font-size: 14px;
       color: inherit;
       outline: none;
       padding: 10px 15px; }
       .bmenu__nav__link img.bmenu__svg__icon {
         display: inline-block;
-        float: left;
         -webkit-filter: grayscale(100%);
         filter: grayscale(100%);
         opacity: 0.6;
@@ -2178,6 +2177,9 @@ button.close {
         margin-right: 10px;
         position: relative;
         top: 0; }
+      .bmenu__nav__link:hover {
+        text-decoration: none;
+        color: #fff; }
     .bmenu__nav__icon {
       position: relative;
       top: -1px;

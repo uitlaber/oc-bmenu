@@ -32,7 +32,6 @@ class Plugin extends PluginBase
                 'category'    => 'system::lang.system.categories.cms',
                 'icon'        => 'icon-bars',
                 'class'       => 'Uit\Bmenu\Models\Settings',
-                'url'         => Backend::url('uit/bmenu/settings'),
                 'order'       => 500,
             ]
         ];
